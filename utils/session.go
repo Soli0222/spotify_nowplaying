@@ -15,7 +15,7 @@ func init() {
 
 func GetSession(r *http.Request) (*sessions.Session, error) {
 	// セッションの取得
-	session, err := store.Get(r, "session-name")
+	session, err := store.Get(r, "access_token")
 	if err != nil {
 		return nil, err
 	}
