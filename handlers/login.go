@@ -10,7 +10,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 	auth_url := "https://accounts.spotify.com/authorize"
 
 	client_id := os.Getenv("SPOTIFY_CLIENT_ID")
-	redirect_uri := "http://127.0.0.1:8080/callback"
+	redirect_uri := os.Getenv("SPOTIFY_REDIRECT_URI")
 	scope := "user-read-currently-playing user-read-playback-state"
 
 	params := url.Values{}

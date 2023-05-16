@@ -13,7 +13,7 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 	code := r.URL.Query().Get("code")
 	token_url := "https://accounts.spotify.com/api/token"
 
-	redirect_uri := "http://127.0.0.1:8080/callback"
+	redirect_uri := os.Getenv("SPOTIFY_REDIRECT_URI")
 	client_id := os.Getenv("SPOTIFY_CLIENT_ID")
 	client_secret := os.Getenv("SPOTIFY_CLIENT_SECRET")
 
